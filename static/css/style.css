@@ -1,0 +1,33 @@
+/**
+ * Theme Name: NowaDays Child Theme
+ * Description: This is a child theme for Nowadays - Multipurpose Creative Theme
+ * Author: Pavel Marhaunichy help@likeaprothemes.com
+ * Author URI: https://likeaprothemes.com
+ * Theme URI: https://themeforest.net/item/nowadays-multipurpose-onemultipage-wordpress-theme/18399207?ref=Like-A-Pro
+ * Version: 1.0.0
+ * Text Domain: nowadays
+ * License: https://themeforest.net/licenses
+ * License URI: https://themeforest.net/licenses
+ * Template: nowadays
+ */
+
+/**
+ * Add your custom css below
+ */
+
+ 
+    .badg:after{
+content:attr(value);
+font-size:16px;
+background: green;
+border-radius:80%;
+padding:3px;
+position:relative;
+left:-8px;
+top:-10px;
+opacity:0.9;
+width: 20px !important;
+display: inline-block;
+color: white;
+}
+  

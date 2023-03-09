@@ -1,0 +1,54 @@
+.flr{
+    float: right;
+}
+
+.mr12{
+    margin-right: 12px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+
+    #signlog{
+        margin-left: 50%;
+        display: grid;
+        padding-right: 58px
+    }
+    #sig{
+        margin-left: -194%;
+    }
+    #log{
+        margin-left: -194%;
+    }
+    #myhead{
+        padding-top: 30%;
+    }
+    #para{
+        padding-right: 10%;
+    }
+    [class*="col-"] {
+        width: 100%;
+      }
+
+    #tog{
+        margin-top: -17%;
+    }
+     #shift
+    {
+        margin-right: 135px;
+        padding-top: 24px;
+    }
+    #line
+    {
+        padding-top: 12%;
+    }
+    #des
+    {
+        margin-right: 9px;
+        padding-top: 5px;
+    }
+    #bad{
+        padding-top: 10%;
+    }
+}

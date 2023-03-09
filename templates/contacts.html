@@ -1,0 +1,122 @@
+{% extends 'masterpage.html'%}
+
+{% load static %}
+
+{% block home %}
+                 {% if home_login_url %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a
+                  class="menu__link" href="{{home_login_url}}"
+                  target="_self">Home</a></li>
+                  {% else %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a
+                    class="menu__link" href="/"
+                    target="_self">Home</a></li>
+                  {% endif %}
+                 {% endblock %} 
+
+                 {% block contact %}
+                 {% if Login_contacts_url %}
+                 <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link menu__link_active"
+                   href="{{Login_contacts_url}}" target="_self">Contacts</a></li>
+                 {% else %}
+             <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link menu__link_active"
+                 href="contact" target="_self">Contacts</a></li>
+                 {% endif %}
+                 {% endblock %}                 
+
+{% block background %}
+{% endblock %}
+
+{% block product %}
+{% endblock %}  
+
+{% block section %}
+<head>
+  <link rel="stylesheet" href="{% static 'css/contact_style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<Main>
+  <section class="ceta">
+    <div class="container py-4">
+        <h2 id="myhead">CONTACT US</h2>
+        <p id="mypara">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+             Fugit, sed placeat porro vel accusantium hic!</p>
+        <div class="row py-3" style="text-align: center;">
+           <div class="col-lg-9 m-auto pt-3">
+            <div class="row py-3">
+                <div class="col-lg-6 pt-1">
+                  <div class="card py-2" style="background: linear-gradient(to right, rgba(0,0,0,0.9) 15%, gray);border: 1px solid black;">
+                    <div class="card-body">
+                     <h3 class="section2"><b>Any query?</b></h3>
+                     <p>Lorem ipsum dolor sit amet, 
+                      consectetur adipisicing elit.
+                       Tenetur optio, suscipit.</p>
+                       <form method="post" style="padding: 0px 17px;">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Your Name" id="name" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color:#BDB76B;"><br>
+                        </div>
+                        <div class="form-group">
+                          <input type="email" class="form-control" placeholder="Your Email" id="email" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color:#BDB76B;"><br>
+                        </div>
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Subject" id="subject" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color:#BDB76B;"><br>
+                        </div>
+                        <div class="form-group">
+                          <textarea class="form-control" rows="2" style="color:#BDB76B;border:2px solid #BDB76B;font-weight: bold;background-color: dimgrey;" id="msg">Your message</textarea>
+                        </div>
+                      </form> 
+                       <button class="btn1" value="submit"><b>SEND NOW</b></button>
+                  </div>
+                </div>
+                </div>
+                <div class="col-lg-6 pt-1">
+                    <div class="card py-2" style="background: linear-gradient(to right, rgba(0,0,0,0.9) 15%, gray);border:1px solid black;">
+                      <div class="card-body">
+                        <h3 class="section2"><b>Contact Informations</b></h3>
+                        <p>Lorem ipsum dolor sit amet, 
+                          consectetur adipisicing elit.
+                           Tenetur optio, suscipit libero 
+                           sit perspiciatis ad labore excepturi 
+                           vitae facilis minima.</p>
+                           <h5><i class="fa fa-map-marker"></i> <b>Location:</b></h5>
+                           <p>442 5th Avenue, <br> Manhattan, <br> NY, 10017</p>
+                           <h5><i class="fa fa-envelope-o"></i> <b>Email:</b></h5>
+                           <p>yourmail@yahoo.com</p>
+                           <h5><i class="fa fa-phone"></i> <b>Phone:</b></h5>
+                           <p>+91 1234567899</p>
+                           <div class="myicon">
+                           <i class="fa fa-facebook"></i>
+                           <i class="fa fa-twitter"></i>
+                           <i class="fa fa-linkedin"></i>
+                           <i class="fa fa-pinterest"></i>
+                           <i class="fa fa-whatsapp"></i>
+                           <i class="fa fa-instagram"></i>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>     
+            </div>
+           </div>
+           
+        </div>
+    </div>
+  </section>
+</Main>
+{% endblock %}
+
+{% block check %}
+{% endblock %}
+    
+{% block carousal %}
+{% endblock %}
+
+{% block team %}
+{% endblock %}
+
+{% block client %}
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}

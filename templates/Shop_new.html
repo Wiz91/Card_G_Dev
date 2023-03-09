@@ -1,0 +1,493 @@
+{% extends 'masterpage.html'%}
+
+{% load static %}
+
+
+{% block toggle %}
+          <nav class="menu-nav col-xs-3 col-sm-9" id="tog">
+            <div class="menu-toggle">
+              <div class="menu-toggle__inner"></div>
+            </div>
+            <ul
+              class="menu align-center header_menu_desktop_case_upper header_submenu_desktop_case_capitalize header_menu_mobile_case_capitalize header_submenu_mobile_case_capitalize">
+              <li class="menu__item menu-mobile-logo"><a class="header-logo__link"
+                  href="https://nowadays.likeaprothemes.com/" rel="home">Nowa<span class="theme-color">Days</span></a>
+              </li>
+                 {% if home_login_url %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a
+                  class="menu__link" href="{{home_login_url}}"
+                  target="_self">Home</a></li>
+                  {% else %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a
+                    class="menu__link" href="/"
+                    target="_self">Home</a></li>
+                  {% endif %}
+                  {% if Login_Database_url %}
+                  <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link"
+                    href="{{Login_Database_url}}" target="_self">Database</a></li>
+                  {% else %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link"
+                  href="db" target="_self">Database</a></li>
+                  {% endif %}
+                  {% if Login_submission_url %}
+                  <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link"
+                    href="{{Login_submission_url}}" target="_self">Submission</a></li>
+                  {% else %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link"
+                  href="sub" target="_self">Submission</a></li>
+                  {% endif %}
+                  {% if Login_shop_url %}
+                  <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link menu__link_active"
+                    href="{{Login_shop_url}}" target="_self">Shop</a></li>
+                  {% else %}
+                  <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link menu__link_active"
+                      href="Shop_new" target="_self">Shop</a></li>
+                  {% endif %}
+
+             
+                  {% if Login_contacts_url %}
+                  <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link"
+                    href="{{Login_contacts_url}}" target="_self">Contacts</a></li>
+                  {% else %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link"
+                  href="contact" target="_self">Contacts</a></li>
+                  {% endif %}
+
+                  {% if loginName %}
+                  <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom" style="float: right;font-size: 20px;">
+                    <!-- <a href="cart"><i class="fa fa-shopping-cart mr-1"></i></a> -->
+                    <a href="cart"><i class="fa badg" value=0>&#xf07a;</i></a>
+                  </li>
+                  <li class="dropdown menu__item  menu-item menu-item-type-custom menu-item-object-custom" id="shift" style="float: right;">
+                    <div>
+                    <a  id="line" style="padding: 0; height: 12.2vh; font-size: 13px;" href="javascript:void(0)" class="dropbtn">{{loginName}}</a>
+                    <div class="dropdown-content">
+                      <a href="Logout">Logout</a>
+                    </div>
+                  </div>
+                  </li>
+              <li id="des" class="menu__item  menu-item menu-item-type-custom menu-item-object-custom" style="margin-right: 5px; float: right; padding-top: 33px;font-size: 13px;">
+                <h6 class="wellcome" style="font-size: 13px;">Welcome</h6>
+              </li>
+              {% else %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom flr" id="signlog"><a class=" mr12"
+                    href="Sup" id="sig" target="_self">Sign up</a><a class="" href="Login" id="log" target="_self">Login</a></li>
+              {% endif %}
+            </ul>
+          </nav>
+          {% endblock %}
+
+{% block background %}
+{% endblock %}
+
+{% block product %}
+{% endblock %}
+
+{% block section %}
+      <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="{% static 'js/jsonp.jsonp' %}"></script>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/shopstyle.css' %}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    
+    <style>
+        .current {
+  color:orangered;
+}
+#pagin li{
+  position: relative;
+display: block;
+padding: 0.5rem 0.75rem;
+margin-left: -1px;
+line-height: 1.25;
+color: #FFD333;
+background-color: #fff;
+border: 1px solid #dee2e6;
+}
+
+    </style>
+
+
+    <script>
+        function myFunction() {
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByClassName("exp");
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByClassName("exp2")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+        </script>
+
+      </head>
+    <main>
+
+        
+         <!-- Breadcrumb Start -->
+    <div class="container-fluid">
+      <div class="row px-xl-5" id="bad">
+          <div class="col-12">
+              <nav class="breadcrumb bg-light mb-30">
+                  <a class="breadcrumb-item text-dark" href="#">Home</a>
+                  <a class="breadcrumb-item text-dark" href="#">Shop</a>
+                  <span class="breadcrumb-item active">Shop List</span>
+              </nav>
+          </div>
+      </div>
+  </div>
+  <!-- Breadcrumb End -->
+
+
+
+  
+
+  <!-- Shop Start -->
+  <div class="container-fluid">
+      <div class="row px-xl-5">
+          <!-- Shop Sidebar Start -->
+          <div class="col-lg-3 col-md-4">
+              <!-- Price Start -->
+              <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by price</span></h5>
+              <div class="bg-light p-4 mb-30 bor_radis">
+                  <form>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" checked id="price-all">
+                          <label class="custom-control-label" for="price-all">All Price</label>
+                          <span class="badge border font-weight-normal">1000</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" id="price-1">
+                          <label class="custom-control-label" for="price-1">$0 - $100</label>
+                          <span class="badge border font-weight-normal">150</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" id="price-2">
+                          <label class="custom-control-label" for="price-2">$100 - $200</label>
+                          <span class="badge border font-weight-normal">295</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" id="price-3">
+                          <label class="custom-control-label" for="price-3">$200 - $300</label>
+                          <span class="badge border font-weight-normal">246</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" id="price-4">
+                          <label class="custom-control-label" for="price-4">$300 - $400</label>
+                          <span class="badge border font-weight-normal">145</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                          <input type="checkbox" class="custom-control-input" id="price-5">
+                          <label class="custom-control-label" for="price-5">$400 - $500</label>
+                          <span class="badge border font-weight-normal">168</span>
+                      </div>
+                  </form>
+              </div>
+              <!-- Price End -->
+              
+              <!-- Color Start -->
+              <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Filter by category</span></h5>
+
+              <div class="bg-light p-4 mb-30 bor_radis">
+                  <form>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" checked id="size-all">
+                          <label class="custom-control-label" for="size-all">All Size</label>
+                          <span class="badge border font-weight-normal">1000</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" id="size-1">
+                          <label class="custom-control-label" for="size-1">POKEMON</label>
+                          <span class="badge border font-weight-normal">150</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" id="size-2">
+                          <label class="custom-control-label" for="size-2">DRAGON BALL Z</label>
+                          <span class="badge border font-weight-normal">295</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" id="size-3">
+                          <label class="custom-control-label" for="size-3">SUPER 
+                          </label>
+                          <span class="badge border font-weight-normal">246</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                          <input type="checkbox" class="custom-control-input" id="size-4">
+                          <label class="custom-control-label" for="size-4">ONEPIECE</label>
+                          <span class="badge border font-weight-normal">145</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                          <input type="checkbox" class="custom-control-input" id="size-5">
+                          <label class="custom-control-label" for="size-5">METAZOO</label>
+                          <span class="badge border font-weight-normal">168</span>
+                      </div>
+                      <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                        <input type="checkbox" class="custom-control-input" id="size-5">
+                        <label class="custom-control-label" for="size-5">MAGIC</label>
+                        <span class="badge border font-weight-normal">168</span>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                      <input type="checkbox" class="custom-control-input" id="size-5">
+                      <label class="custom-control-label" for="size-5">YUGIO</label>
+                      <span class="badge border font-weight-normal">168</span>
+                  </div>
+                  <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                    <input type="checkbox" class="custom-control-input" id="size-5">
+                    <label class="custom-control-label" for="size-5">DIGIMON</label>
+                    <span class="badge border font-weight-normal">168</span>
+                </div>
+                <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                  <input type="checkbox" class="custom-control-input" id="size-5">
+                  <label class="custom-control-label" for="size-5">WEIS SCHWARZ</label>
+                  <span class="badge border font-weight-normal">168</span>
+              </div>
+              <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                <input type="checkbox" class="custom-control-input" id="size-5">
+                <label class="custom-control-label" for="size-5">MARVEL</label>
+                <span class="badge border font-weight-normal">168</span>
+            </div>
+                  </form>
+              </div>
+              <!-- Color End -->
+
+              <!-- Size Start -->
+              <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Sports card</span></h5>
+              <div class="bg-light p-4 mb-30 bor_radis">
+                <form>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" id="color-1">
+                        <label class="custom-control-label" for="color-1">SOCCER</label>
+                        <span class="badge border font-weight-normal">150</span>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" id="color-2">
+                        <label class="custom-control-label" for="color-2">UFC</label>
+                        <span class="badge border font-weight-normal">295</span>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" id="color-3">
+                        <label class="custom-control-label" for="color-3">BOXING</label>
+                        <span class="badge border font-weight-normal">246</span>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                        <input type="checkbox" class="custom-control-input" id="color-4">
+                        <label class="custom-control-label" for="color-4">NRL</label>
+                        <span class="badge border font-weight-normal">145</span>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                        <input type="checkbox" class="custom-control-input" id="color-5">
+                        <label class="custom-control-label" for="color-5">AFL</label>
+                        <span class="badge border font-weight-normal">168</span>
+                    </div>
+                    <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                      <input type="checkbox" class="custom-control-input" id="color-5">
+                      <label class="custom-control-label" for="color-5">BASEBALL</label>
+                      <span class="badge border font-weight-normal">168</span>
+                  </div>
+                  <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                    <input type="checkbox" class="custom-control-input" id="color-5">
+                    <label class="custom-control-label" for="color-5">NFL</label>
+                    <span class="badge border font-weight-normal">168</span>
+                </div>
+                <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                  <input type="checkbox" class="custom-control-input" id="color-5">
+                  <label class="custom-control-label" for="color-5">WRESTLING</label>
+                  <span class="badge border font-weight-normal">168</span>
+              </div>
+              <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between">
+                <input type="checkbox" class="custom-control-input" id="color-5">
+                <label class="custom-control-label" for="color-5">GOLF</label>
+                <span class="badge border font-weight-normal">168</span>
+            </div>
+                </form>
+            </div>
+              <!-- Size End -->
+          </div>
+          <!-- Shop Sidebar End -->
+
+
+          <!-- Shop Product Start -->
+          <div class="col-lg-9 col-md-8 ">
+              <div class="row pb-3">
+                  <div class="col-12 pb-1">
+                      <div class="d-flex align-items-center justify-content-between mb-4">
+                          <div>
+                              <button class="btn btn-sm btn-light"><i class="fa fa-th-large"></i></button>
+                              <button class="btn btn-sm btn-light ml-2"><i class="fa fa-bars"></i></button>
+                              <input type="text" id="myInput" onkeyup="myFunction()"  placeholder="Search..">
+                          </div>
+                          <div class="ml-2">
+                              <div class="btn-group">
+                                  <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Sorting</button>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                      <a class="dropdown-item" href="#">Latest</a>
+                                      <a class="dropdown-item" href="#">Popularity</a>
+                                      <a class="dropdown-item" href="#">Best Rating</a>
+                                  </div>
+                              </div>
+                              <div class="btn-group ml-2">
+                                  <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">Showing</button>
+                                  <div class="dropdown-menu dropdown-menu-right">
+                                      <a class="dropdown-item" href="#">10</a>
+                                      <a class="dropdown-item" href="#">20</a>
+                                      <a class="dropdown-item" href="#">30</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                 <div id="myUL" class="table-wrappercart-scroll-y my-customcart-scrollbar">
+                  {% for row in addedpro %}                 
+                    <div class="col-lg-4 col-md-6 col-sm-6 pb-1 line-content exp" onclick="myFunction{{ forloop.counter }}()">
+                        <div class="exp2" style="display: none;">{{row.Product_name}}</div>
+                        <div class="product-item bg-light mb-4" >
+                            <div class="product-img position-relative overflow-hidden">
+                              <div class="hei35vh">
+                                <img class="img-fluid w-100" src="{{bis}}/media/{{row.image}}" alt="">
+                               
+                              </div>
+                                <div class="product-action">
+                                    <!-- {% if loginName %} -->
+                                    <!-- {% else %} -->
+                                    <!-- <a class="btn btn-outline-dark btn-square" href="{% url 'login' %}"><i class="fa fa-shopping-cart"></i></a>
+                                    {% endif %} -->
+                                    <a class="btn btn-outline-dark btn-square" href="{% url 'cart' %}"><i class="fa fa-shopping-cart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
+                                    <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="text-center py-4">
+                                <a class="h6 text-decoration-none text-truncate" href="">{{row.Product_name}}</a>
+                                <div class="d-flex align-items-center justify-content-center mt-2">
+                                    <h5>{{row.Discount_price}}$</h5><h6 class="text-muted ml-2"><del>{{row.Actual_price}}$</del></h6>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-center mb-1">
+                                    <small class="fa fa-star text-primary mr-1"></small>
+                                    <small class="fa fa-star text-primary mr-1"></small>
+                                    <small class="fa fa-star text-primary mr-1"></small>
+                                    <small class="fa fa-star text-primary mr-1"></small>
+                                    <small class="fa fa-star text-primary mr-1"></small>
+                                    <small>(99)</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+<script>
+    function myFunction{{ forloop.counter }}() {
+        location.href="shop_detail/{{row.id}}";
+    }
+</script>
+    
+                  {% endfor %}
+                </div>
+                  
+                  <!-- <div class="col-12">
+                      <nav>
+                        <ul class="pagination justify-content-center" id="pagin">
+                          
+                        </ul>
+                      </nav>
+                  </div> -->
+              </div>
+          </div>
+          <!-- Shop Product End -->
+      </div>
+  </div>
+  <!-- Shop End -->
+
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+    </main>
+    <!-- <script>
+       pageSize = 9;
+
+var pageCount =  $(".line-content").length / pageSize;
+
+ for(var i = 0 ; i<pageCount;i++){
+    
+   $("#pagin").append('<li><a href="#">'+(i+1)+'</a></li> ');
+ }
+    $("#pagin li").first().find("a").addClass("current")
+showPage = function(page) {
+    $(".line-content").hide();
+    $(".line-content").each(function(n) {
+        if (n >= pageSize * (page - 1) && n < pageSize * page)
+            $(this).show();
+    });        
+}
+
+showPage(1);
+
+$("#pagin li a").click(function() {
+    $("#pagin li a").removeClass("current");
+    $(this).addClass("current");
+    showPage(parseInt($(this).text())) 
+});
+    </script> -->
+
+      <script type="text/javascript" src="{% static 'js/wp-embed.min.js.download' %}"
+        id="wp-embed-js"></script>
+    <script>
+      $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+    if (scroll >= 500) {
+        //clearHeader, not clearheader - caps H
+        $(".header").addClass(".header .header-sticky .header-dark");
+    }
+});
+    </script>
+
+
+     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+ 
+     <!-- Contact Javascript File -->
+     <script src="mail/jqBootstrapValidation.min.js"></script>
+     <script src="mail/contact.js"></script>
+ 
+     <!-- Template Javascript -->
+     <script src="{% static 'js/main.js' %}"></script>
+
+     {% endblock %}
+
+{% block check %}
+{% endblock %}
+
+{% block carousal %}
+{% endblock %}
+
+{% block team %}
+{% endblock %}
+
+{% block client %}
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

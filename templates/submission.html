@@ -1,0 +1,146 @@
+{% extends 'masterpage.html'%}
+
+{% load static %}
+
+
+{% block home %}
+                 {% if home_login_url %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a
+                  class="menu__link " href="{{home_login_url}}"
+                  target="_self">Home</a></li>
+                  {% else %}
+              <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a
+                    class="menu__link" href="/"
+                    target="_self">Home</a></li>
+                  {% endif %}
+                 {% endblock %} 
+
+                 
+                 {% block sub %}
+                 {% if Login_submission_url %}
+                 <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link menu__link_active"
+                   href="{{Login_submission_url}}" target="_self">Submission</a></li>
+                 {% else %}
+             <li class="menu__item  menu-item menu-item-type-custom menu-item-object-custom"><a class="menu__link menu__link_active"
+                 href="sub" target="_self">Submission</a></li>
+                 {% endif %}
+                 {% endblock %}
+
+{% block background %}
+{% endblock %}
+
+{% block product %}
+{% endblock %}  
+
+{% block section %}
+   <head>
+    <link rel="stylesheet" href="{% static 'css/submission_style.css' %}">
+   </head>
+    <main>
+      <section class="ceta">
+        <div class="container py-4">
+            <h2 id="myhead">ONLINE SUBMISSION FORM</h2>
+            <p id="mypara">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br>
+                 Fugit, sed placeat porro vel accusantium hic!</p><br>
+            <p style="color:red;margin-left: 13%;">Note: Clearing your cache/browser cookies may delete your incomplete forms. Do not add products to your cart if you <br> are submitting cards for grading as this will clear your whole submission form. 
+                You must checkout your submission <br> completely before adding products to your cart.</p>     
+            <div class="row py-3 text-center" style="text-align: center;">
+               <div class="col-lg-9 m-auto pt-3">
+                      <div class="card py-2" style="background: linear-gradient(to right, rgba(0,0,0,0.9) 15%, gray);border :2px solid black;border-radius: 20px;">
+                        <div class="card-body">
+                           <form method="post" style="padding: 0px 22px;">
+                            <div class="row">   
+                            <div class="form-group col-lg-6">
+                              <input type="text" class="form-control" placeholder="SET NAME" id="sname" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color:#BDB76B;"><br>
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <input type="text" class="form-control" placeholder="CARD NAME" id="cname" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color: #BDB76B;"><br>
+                              </div>
+                            </div>
+                            <div class="row">   
+                                <div class="form-group col-lg-6">
+                                  <input type="text" class="form-control" placeholder="CARD NUMBER" id="cno" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color: #BDB76B;"><br>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <input type="text" class="form-control" placeholder="RARITY" id="rarity" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color: #BDB76B;"><br>
+                                  </div>
+                                </div>
+                                <div class="row">   
+                                    <div class="form-group col-lg-6">
+                                      <input type="text" class="form-control" placeholder="DECLARED AMOUNT" id="amt" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color: #BDB76B;"><br>
+                                    </div>
+                                   <div class="form-group col-lg-6">
+                                        <select class="form-control" name="service" style="color: gray;border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color: #BDB76B;"><br>
+                                        <option>SERVICE TYPE</option>
+                                        <option>Bulk - minimum 20 cards</option>
+                                        <option>Economy - no minimum</option>
+                                        <option>Premium - no minimum</option>
+                                        </select>
+                                      </div>
+                                    </div>
+                                    <div class="row">   
+                                        <div class="form-group col-lg-6">
+                                          <input type="number" class="form-control" placeholder="0" id="quantity" min="0" max="20" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color: #BDB76B; width: 100%;"><br>
+                                        </div>
+                                        <div class="form-group col-lg-6">
+                                          <input type="number" class="form-control" min="2000" max="2023" step="1" placeholder="YEAR" style="border: 2px solid #BDB76B;font-weight: bold;background-color: dimgrey;color: #BDB76B;width: 100%;"><br>
+                                        </div>
+                                        </div> 
+                                        <button class="btn">Add</button>
+                           </form>
+                      </div>
+                    </div>
+                    </div>
+               </div> 
+            </div>
+        </div>
+      </section>
+    </main>
+ 
+      <link href="./homepage onepage 06 – Nowadays wordpress theme_files/css" rel="stylesheet">
+      <script type="text/javascript">
+        (function () {
+          var c = document.body.className;
+          c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+          document.body.className = c;
+        })()
+      </script>
+      <script type="text/javascript" src="./homepage onepage 06 – Nowadays wordpress theme_files/libs.min.js.download"
+        defer="defer" id="nowadays-scripts-libs-js"></script>
+      <script type="text/javascript" id="nowadays-scripts-common-js-extra">
+        /* <![CDATA[ */
+        var lpt = { "ajaxurl": "https:\/\/nowadays.likeaprothemes.com\/wp-admin\/admin-ajax.php", "cssVars": { "primary_color": { "units": "" }, "blog_primary_color": { "units": "" }, "font_main": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "size": "px", "line_height": "", "letter_spacing": "px", "color": "" } }, "font_h1": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "size": "rem", "line_height": "", "letter_spacing": "px", "color": "" } }, "font_h2": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "size": "rem", "line_height": "", "letter_spacing": "px", "color": "" } }, "font_h3": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "size": "rem", "line_height": "", "letter_spacing": "px", "color": "" } }, "font_h4": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "size": "rem", "line_height": "", "letter_spacing": "px", "color": "" } }, "font_h5": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "size": "rem", "line_height": "", "letter_spacing": "px", "color": "" } }, "font_h6": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "size": "rem", "line_height": "", "letter_spacing": "px", "color": "" } }, "font_menu": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "size": "rem", "letter_spacing": "px" } }, "font_button": { "units": { "family": ", 'Helvetica', 'Arial', sans-serif", "letter_spacing": "px" } }, "container_max_width": { "units": "px" }, "background_color": { "units": "" }, "header_height": { "units": "px" }, "desktop_menu_initial_bg_color": { "units": "" }, "desktop_menu_sticky_bg_color": { "units": "" }, "desktop_menu_link_color": { "units": "" }, "desktop_menu_link_hover_color": { "units": "" }, "desktop_submenu_bg_color": { "units": "" }, "desktop_submenu_link_color": { "units": "" }, "desktop_submenu_link_hover_color": { "units": "" }, "desktop_menu_megamenu_link_hover_color": { "units": "" }, "desktop_menu_megamenu_line_color": { "units": "" }, "desktop_submenu_css_box": { "units": { "border_radius": "", "box_shadow": "" } }, "mobile_menu_hamburger_color": { "units": "" }, "mobile_menu_hamburger_sticky_color": { "units": "" }, "mobile_menu_initial_bg_color": { "units": "" }, "mobile_menu_sticky_bg_color": { "units": "" }, "mobile_menu_bg_color": { "units": "" }, "mobile_menu_link_color": { "units": "" }, "mobile_menu_link_hover_color": { "units": "" }, "mobile_menu_link_active_color": { "units": "" }, "mobile_submenu_bg_color": { "units": "" }, "mobile_submenu_link_color": { "units": "" }, "mobile_submenu_link_hover_color": { "units": "" }, "footer_top_bg_color": { "units": "" }, "footer_top_color": { "units": "" }, "footer_widget_title_color": { "units": "" }, "footer_widget_title_line_color": { "units": "" }, "footer_social_icon_color": { "units": "" }, "footer_bottom_bg_color": { "units": "" }, "footer_bottom_color": { "units": "" }, "footer_input_bg_color": { "units": "" }, "footer_input_focus_color": { "units": "" }, "footer_accent_color": { "units": "" }, "footer_link_hover_color": { "units": "" }, "footer_menu_link_color": { "units": "" }, "input_bg_color": { "units": "" }, "input_text_color": { "units": "" }, "input_border_color": { "units": "" }, "input_focused_border_color": { "units": "" }, "input_disabled_border_color": { "units": "" }, "input_border_width": { "units": "px" }, "input_border_radius": { "units": "px" }, "input_font_size": { "units": "rem" }, "input_font_weight": { "units": "" } } };
+    /* ]]> */
+      </script>
+      <script type="text/javascript" src="./homepage onepage 06 – Nowadays wordpress theme_files/common.min.js.download"
+        defer="defer" id="nowadays-scripts-common-js"></script>
+      <script type="text/javascript" src="./homepage onepage 06 – Nowadays wordpress theme_files/wp-embed.min.js.download"
+        id="wp-embed-js"></script>
+    <script>
+      $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
+
+     //>=, not <=
+    if (scroll >= 500) {
+        //clearHeader, not clearheader - caps H
+        $(".header").addClass(".header .header-sticky .header-dark");
+    }
+});
+    </script>
+{% endblock %}    
+    
+{% block check %}
+{% endblock %}
+    
+{% block carousal %}
+{% endblock %}
+
+{% block team %}
+{% endblock %}
+
+{% block client %}
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}

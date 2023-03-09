@@ -1,0 +1,57 @@
+.ceta
+{
+    /* background-color: #5D5D5D; */
+        /* background: linear-gradient(to right, rgba(0,0,0,0.9) 15%, gray); */
+       background:url("../images/bg.png");
+}
+.ceta h2
+{
+    text-align: center;color: white; padding-top: 10%;
+    font-weight: bold;
+}
+#mypara
+{
+    text-align: center;color:black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+#myhead:after 
+{
+  background:orange;
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 3px;
+  margin: 2px auto;
+  margin-top: 2%;
+}
+.ceta .btn
+{
+    color: #BDB76B;
+    background-color: black;
+    height: 48px;
+    width:150px;
+    border: 2px solid #BDB76B;
+    border-radius: 20px;
+}
+.ceta .myicon i
+{
+    height: 34px;
+    width: 35px;
+    background-color: black;
+    color: #BDB76B;
+    font-size: 20px;
+    padding-top: 2%;
+    padding-left: 2.5%;
+    margin-bottom: 3%;
+}
+.ceta .btn:hover
+{
+    color:black;
+    background-color: #BDB76B;
+    border: 2px solid black;
+}
+.ceta .card ::placeholder
+{
+    color: #BDB76B;
+}

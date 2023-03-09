@@ -1,0 +1,15 @@
+body{
+    background-color: black;
+}
+
+.main_indiv{
+    padding: 0px 20%;
+}
+input{
+    width: 50% !important;
+    border-radius: 23px !important;
+}
+.btn_sub{
+    font-size: large;
+    border-radius: 9px;
+}

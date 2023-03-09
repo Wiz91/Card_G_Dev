@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Classic Login Form Example</title>
+  <link href="https://fonts.googleapis.com/css?family=Assistant:400,700" rel="stylesheet"><link rel="stylesheet" href="{% static 'css/Login.css'%}">
+
+</head>
+<body>
+  {% if messages %}
+  {% for message in messages %}
+   {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+  {% endfor %}
+
+{% endif %}
+
+<!-- partial:index.partial.html -->
+<section class='login' id='login'>
+  {% if error %}
+    <h3 class="err">{{error}}</h3>
+    {% endif %}
+  <div class='head'>
+  <h1 class='company'>Universe Explorer</h1>
+  </div>
+  <p class='msg'>Welcome back</p>
+  <div class='form'>
+    <form action="PLogin" method="post">
+      {% csrf_token %}
+  <input name="email" type="text" placeholder='Email' class='text' id='username' required><br>
+  <input name="pass" type="password" placeholder='••••••••••••••' class='password'><br>
+  <!-- <a href="#" type="button" class='btn-login'>Login</a> -->
+  <button class="btn-login" type="submit">Login</button>
+  <a href="#" class='forgot'>Forgot?</a>
+    </form>
+  </div>
+</section>
+<!-- partial -->
+  <script  src="{% static 'js/Login.js'%}"></script>
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+.parallax{
+    background-image: url(../images/card_bg1.jpg); 
+    background-repeat: no-repeat;
+    filter: opacity(0.7); 
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+}
+
+#client{
+    background-image:url(../images/card_bg2.jpg);
+    background-repeat:no-repeat;
+}

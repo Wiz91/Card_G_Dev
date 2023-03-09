@@ -1,0 +1,216 @@
+
+.shopingfont{
+  padding-left: 178px;
+}
+
+h4,h6,h5{
+  color: #1c1c1c !important;
+}
+
+.bd{
+  margin: 0px;
+  background-color: black;
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  align-content: stretch;
+  justify-content: center;
+}
+.card-groups,
+.big-card,
+.card-group {
+  width: 30vmin;
+}
+.card-groups,
+.card,
+.card-group {
+  aspect-ratio: 5/7;
+}
+.card-group {
+  position: absolute;
+  transition: transform 400ms ease;
+}
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  transition: transform 800ms cubic-bezier(0.05, 0.43, 0.25, 0.95);
+  background-position: center;
+  background-size: cover;
+}
+.big-card {
+  border-radius: 1vmin;
+}
+.little-card {
+  width: 12vmin;
+  border-radius: 2vmin;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+/* Images */
+.big-card:nth-child(2) {
+  transform: translateX(-10%) rotate(-1deg);
+  background-image: url("../grading_images/img1.jpg");
+}
+.big-card:nth-child(4) {
+  transform: rotate(2deg);
+  background-image: url("../grading_images/img2.jpg");
+}
+.big-card:nth-child(6) {
+  transform: translateX(-6%) rotate(-3deg);
+  background-image: url("../grading_images/img5.jpg");
+}
+.big-card:nth-child(8) {
+  transform: translate(10%, 3%) rotate(5deg);
+  background-image: url("../grading_images/img4.jpg");
+}
+.card-group .little-card:nth-child(1) {
+  background-image: url("../grading_images/img3.jpg");
+}
+.card-group .little-card:nth-child(3) {
+  background-image: url("../grading_images/img6.jpg");
+}
+.card-group .little-card:nth-child(5) {
+  background-image: url("../grading_images/img7.jpg");
+}
+.card-group .little-card:nth-child(7) {
+  background-image: url("../grading_images/img1.jpg");
+}
+.card-group:nth-child(2) .big-card:nth-child(8) {
+  background-image: url("../grading_images/img1.jpg") !important;
+}
+.card-group:nth-child(1) .big-card:nth-child(8) {
+  background-image: url("../grading_images/img3.jpg") !important;
+}
+
+.card-group:hover .big-card:nth-child(2) {
+  transform: translate(-75%, 16%) rotate(-24deg);
+}
+.card-group:hover .big-card:nth-child(4) {
+  transform: translate(-25%, 8%) rotate(-8deg);
+}
+.card-group:hover .big-card:nth-child(6) {
+  transform: translate(25%, 5%) rotate(8deg);
+}
+.card-group:hover .big-card:nth-child(8) {
+  transform: translate(75%, 16%) rotate(24deg);
+}
+.card-group:hover .little-card:nth-child(1) {
+  transform: translate(200%, -160%) rotate(-15deg);
+}
+.card-group:hover .little-card:nth-child(3) {
+  transform: translate(160%, 170%) rotate(15deg);
+}
+.card-group:hover .little-card:nth-child(5) {
+  transform: translate(-200%, -170%) rotate(15deg);
+}
+.card-group:hover .little-card:nth-child(7) {
+  transform: translate(-200%, 140%) rotate(-15deg);
+}
+.card-swiper-buttons {
+  margin-top: 10vmin;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 2vmin;
+}
+.card-swiper-buttons button {
+  font-size: 3.5vmin;
+  border-radius: 100%;
+  border: 0.5vmin solid rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
+  height: 8vmin;
+  width: 8vmin;
+  color: rgb(5, 208, 255);
+  border-color: rgb(5, 208, 255);
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.3s all;
+}
+#next-button:hover,
+#previous-button:hover {
+  background-color: rgb(5, 208, 255);
+  box-shadow: 0px 0px 15px rgb(5, 208, 255);
+  border-color: black;
+  color: black;
+}
+.card-group[data-status="unknow"] {
+  transform: scale(0);
+}
+.card-group[data-status="active"] {
+  transition-delay: 300ms;
+}
+.card-group[data-status="after"] {
+  transform: translateX(50%) scale(0);
+}
+.card-group[data-status="before"] {
+  transform: translateX(-50%) scale(0);
+}
+.card-group[data-status="becoming-active-from-before"] {
+  transform: translateX(-50%) scale(0);
+  transition: none;
+}
+.card-group[data-status="becoming-active-from-after"] {
+  transform: translateX(50%) scale(0);
+  transition: none;
+}
+
+/* -- YouTube Link Styles -- */
+
+body.menu-toggled > .meta-link > span {
+  color: rgb(30, 30, 30);
+}
+
+#insta-link {
+  bottom: 60px;
+}
+
+#insta-link > i {
+  color: rgb(194, 106, 110);
+}
+
+#yt-link > i {
+  color: rgb(239, 20, 30);
+}
+
+.meta-link {
+  align-items: center;
+  backdrop-filter: blur(3px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  bottom: 10px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: inline-flex;
+  gap: 5px;
+  left: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  text-decoration: none;
+  transition: background-color 400ms, border-color 400ms;
+  z-index: 10000;
+}
+
+.meta-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.meta-link > i,
+.meta-link > span {
+  height: 20px;
+  line-height: 20px;
+}
+
+.meta-link > span {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+}
+
+
+

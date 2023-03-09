@@ -1,0 +1,101 @@
+.ceta
+{
+    /* background: linear-gradient(to right, rgba(0,0,0,0.9) 20%, gray);  */
+    background: url("../images/bg.png");
+    /* background-color: dimgray; */
+    
+}
+.ceta h2
+{
+    text-align: center;color: white; padding-top: 10%;
+    font-weight: bold;
+}
+#mypara
+{
+    text-align: center;color:black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+.card p
+{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    color: #BDB76B;
+}
+.section2:after 
+{
+  background:#BDB76B;
+  content: " ";
+  display: block;
+  width: 50px;
+  height: 3px;
+  margin: 2px;
+  margin-top: 2%;
+}
+#myhead:after 
+{
+  background:orange;
+  content: " ";
+  display: block;
+  width: 100px;
+  height: 3px;
+  margin: 2px auto;
+  margin-top: 2%;
+}
+.ceta .btn1
+{
+    color: #BDB76B;
+    background-color: black;
+    height: 48px;
+    width:130px;
+    border: 2px solid #BDB76B;
+    border-radius: 10px;
+    margin-top: 6%;
+    margin-bottom: 2%;
+}
+.ceta .myicon i
+{
+    height: 34px;
+    width: 35px;
+    background-color: black;
+    color: #BDB76B;
+    font-size: 20px;
+    padding-top: 2%;
+    padding-left: 2.5%;
+    margin-bottom: 5%;
+    border: 1px solid #BDB76B;
+}
+.ceta .myicon i:hover
+{
+    color: black;
+    background-color: #BDB76B;
+    border: 1px solid black;
+}
+.ceta .btn1:hover
+{
+    color: black;
+    background-color: #BDB76B;
+    border: 2px solid black;
+}
+.section2 
+{
+    color: white;
+}
+.card h5
+{
+    color: white;
+}
+.card h5 i
+{
+    color:white;
+    font-size: 19px;
+}
+.ceta .card
+{
+    border: 2px solid #BDB76B;
+    border-radius: 21px;
+}
+.ceta .card ::placeholder
+{
+    color: #BDB76B;
+}
